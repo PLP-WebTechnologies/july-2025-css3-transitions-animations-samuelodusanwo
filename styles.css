@@ -1,0 +1,209 @@
+/* --- Global Styles & Resets --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; /* Light grey background */
+    color: #333;
+}
+
+/* Ensure box-sizing for consistent layout */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #2c3e50; /* Dark blue */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+h1, h2, h3 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    border-bottom: 2px solid #3498db; /* Blue underline */
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.feature-card {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="number"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 22px);
+    max-width: 150px;
+    text-align: center;
+}
+
+button {
+    background-color: #3498db; /* Blue */
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 5px;
+    transition: background-color 0.2s ease, transform 0.2s ease; /* Transition for buttons */
+}
+
+button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.small-text {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 15px;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    font-size: 0.85em;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+/* --- Part 1: CSS3 Transitions and Animations --- */
+
+/* Button Hover Transition */
+.animated-button {
+    background-color: #27ae60; /* Green */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.animated-button:hover {
+    background-color: #2ecc71; /* Lighter green */
+    transform: scale(1.05) translateY(-3px); /* Scale up and lift */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Continuous CSS Animation: Pulsing Box */
+.pulsing-box {
+    width: 100px;
+    height: 100px;
+    background-color: #e67e22; /* Orange */
+    border-radius: 10px;
+    margin: 20px auto;
+    /* Apply the animation */
+    animation: pulse 2s infinite alternate ease-in-out; /* Name, duration, iteration, direction, timing */
+}
+
+/* Define the keyframe animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(230, 126, 34, 0.7);
+    }
+    50% {
+        transform: scale(1.08);
+        box-shadow: 0 0 20px rgba(230, 126, 34, 0.9);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(230, 126, 34, 0.7);
+    }
+}
+
+/* --- Part 3: Combining CSS Animations with JavaScript --- */
+
+/* Dynamic Box (triggered by JS) */
+.dynamic-box {
+    width: 120px;
+    height: 120px;
+    background-color: #9b59b6; /* Purple */
+    margin: 20px auto;
+    border-radius: 15px;
+    transition: transform 0.5s ease-out, background-color 0.5s ease-out; /* Smooth transition for JS-triggered changes */
+    transform: translateX(0) rotate(0deg); /* Initial state */
+}
+
+/* Class added by JavaScript to trigger animation */
+.dynamic-box.animate-active {
+    background-color: #e74c3c; /* Red */
+    transform: translateX(100px) rotate(360deg); /* Move right and rotate */
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed; /* Fixed position relative to viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Start hidden */
+    visibility: hidden; /* Hide from screen readers/interactions */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth fade in/out */
+    z-index: 1000; /* Ensure it's on top of other content */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    transform: translateY(-50px); /* Start slightly above */
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Smooth slide and fade */
+}
+
+/* Classes added by JavaScript for modal visibility */
+.modal-overlay.visible {
+    opacity: 1; /* Fully opaque */
+    visibility: visible; /* Make visible */
+}
+
+.modal-overlay.visible .modal-content {
+    transform: translateY(0); /* Slide to original position */
+}
+
+/* Utility class to hide elements */
+.hidden {
+    display: none;
+}

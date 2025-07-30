@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animations & JS Interactivity</title>
+    <meta name="description" content="An assignment showcasing CSS3 transitions, keyframe animations, JavaScript functions (scope, parameters, return values), and combining CSS with JS for interactive effects.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Dynamic Web Pages: CSS & JavaScript</h1>
+        <p>Bringing designs to life with animations and logic.</p>
+    </header>
+
+    <main>
+        <!-- Part 1: CSS3 Transitions and Animations -->
+        <section id="css-animations-section">
+            <h2>Part 1: CSS3 Transitions and Animations</h2>
+
+            <div class="feature-card">
+                <h3>Button Hover Transition</h3>
+                <button id="hoverButton" class="animated-button">Hover Over Me!</button>
+                <p>This button uses a CSS `transition` for a smooth color change and scale effect on hover.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Continuous CSS Animation</h3>
+                <div id="pulsingBox" class="pulsing-box"></div>
+                <p>This box uses a CSS `@keyframes` animation for a continuous pulsing effect.</p>
+            </div>
+        </section>
+
+        <!-- Part 2: JavaScript Functions - Scope, Parameters & Return Values -->
+        <section id="js-functions-section">
+            <h2>Part 2: JavaScript Functions - Deep Dive</h2>
+
+            <div class="feature-card">
+                <h3>Calculate Circle Circumference</h3>
+                <label for="radiusInput">Enter Radius (cm):</label>
+                <input type="number" id="radiusInput" value="5" min="0" step="0.1">
+                <button id="calculateCircumferenceBtn">Calculate</button>
+                <p>Circumference: <span id="circumferenceResult"></span> cm</p>
+                <p class="small-text">Demonstrates function parameters and return values.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>JavaScript Scope Demo</h3>
+                <button id="scopeDemoBtn">Run Scope Demo in Console</button>
+                <p class="small-text">Check your browser's developer console (F12) to see global vs. local scope in action.</p>
+            </div>
+        </section>
+
+        <!-- Part 3: Combining CSS Animations with JavaScript -->
+        <section id="js-css-integration-section">
+            <h2>Part 3: Combining CSS & JavaScript</h2>
+
+            <div class="feature-card">
+                <h3>Trigger Box Animation</h3>
+                <button id="triggerBoxAnimationBtn">Animate Box!</button>
+                <div id="dynamicBox" class="dynamic-box"></div>
+                <p class="small-text">Click the button to trigger a CSS animation on the box by adding/removing a class.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Interactive Modal Popup</h3>
+                <button id="openModalBtn">Open Info Modal</button>
+                <p class="small-text">Uses JavaScript to toggle classes that control CSS transitions for a modal.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Your Name. All Rights Reserved. JavaScript & CSS Assignment.</p>
+    </footer>
+
+    <!-- The Modal HTML Structure (initially hidden by CSS) -->
+    <div id="infoModal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <h3>Welcome to the Info Modal!</h3>
+            <p>This modal slides in and fades using CSS transitions, triggered by JavaScript.</p>
+            <p>It's a common pattern for popups, alerts, or detailed information displays.</p>
+            <button id="closeModalBtn">Close Modal</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
